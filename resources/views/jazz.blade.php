@@ -12,9 +12,9 @@
 
     <!-- Styles -->
     <style>
-        html,
+
         body {
-            background-color: rgba(255, 255, 255, 0.741);
+            background-color: rgb(36, 42, 40);
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
             height: 100vh;
@@ -62,10 +62,10 @@
 
         .card {
             --card-gradient: rgba(0, 0, 0, 0.8);
-            --card-gradient: #5e9ad9, darkgrey;
+            --card-gradient: #30585b, darkgrey;
             --card-blend-mode: overlay;
 
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.651);
             border-radius: 0.5rem;
             box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
             padding-bottom: 1rem;
@@ -78,11 +78,11 @@
             border-radius: 0.5rem 0.5rem 0 0;
             width: 100%;
             object-fit: cover;
-            // height: max(10rem, 25vh);
+            height: max(10rem, 25vh);
             max-height: max(10rem, 30vh);
             aspect-ratio: 4/3;
             mix-blend-mode: var(--card-blend-mode);
-            // filter: grayscale(100);
+            object-position: top;
         }
 
         .card:hover,
@@ -126,9 +126,40 @@
     </style>
 </head>
 
+@php 
+        $jazz=[
+            [
+                'title' => 'Ella & Louis',
+                'author' => 'Ella Fitzgerald & Louis Armstrong',
+                'img' => 'https://m.media-amazon.com/images/I/81H+9Wbki0L._AC_SL1500_.jpg'
+            ],
+            [
+                'title' => 'My Favourite Things',
+                'author' => 'John Coltrane',
+                'img' => 'https://e.snmc.io/i/1200/s/9d7aabca6e54a12ce573870125f84212/6003959'
+            ],
+            [
+                'title' => 'I Put A Spell On You',
+                'author' => 'Nina Simone',
+                'img' => 'https://m.media-amazon.com/images/I/41XJEvPNzNL._AC_.jpg'
+            ]
+
+];
+@endphp
+
 <body>
     <button class="btn"><a href="/">Torna alla Homepage</a></button>
-    prova- Jazz
+
+    <ul class="card-wrapper">
+        @for ($i = 0; $i < count($jazz); $i++)
+            <li class="card">
+            <img src="{{$jazz[$i]['img']}}">
+            <h3>{{$jazz[$i]['title']}}</h3>
+            <p>{{$jazz[$i]['author']}}</p>
+            </li>
+
+        @endfor
+    </ul>
 </body>
 
 </html>
