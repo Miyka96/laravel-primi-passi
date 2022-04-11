@@ -17,6 +17,18 @@ Route::get('/', function () {
     return view('landingPage');
 });
 
+Route::get('/classic', function () {
+    return view('classic');
+});
+
 Route::get('/rock', function () {
     return view('rock');
+});
+
+Route::get('/progr', function () {
+    return view('progr');
+});
+
+Route::get('/jazz', function () {
+    return view('jazz');
 });

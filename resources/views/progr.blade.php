@@ -23,6 +23,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+                position: relative;
             }
             ul{
                 display: flex;
@@ -30,7 +31,7 @@
             }
             a{
                 text-decoration: none;
-                color: initial;
+                color: currentColor;
             }
             li{
                 list-style:none;
@@ -38,17 +39,23 @@
                 font-weight: 500;
                 font-size: 18px;
             }
+            .btn{
+                padding: 10px;
+                border-radius: 8px;
+                border: none;
+                background-color: rgba(168, 188, 204, 0.425);
+                position: absolute;
+                bottom: 5px;
+                color: white;
+            }
+            .btn:hover{
+                background-color: rgb(168, 188, 204);
+            }
         </style>
     </head>
 
     <body>
-       <h1>Welcome!</h1>
-       <h3>Please, select a playlist:</h3>
-       <ul>
-           <li><a href="/classic">Classic</a></li>
-           <li><a href="/rock">Rock</a></li>
-           <li><a href="/progr">Progressive</a></li>
-           <li><a href="/jazz">Jazz</a></li>
-       </ul>
+        <button class="btn"><a href="/">Torna alla Homepage</a></button>
+        prova- Progressive
     </body>
 </html>
