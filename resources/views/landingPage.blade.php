@@ -51,10 +51,10 @@
     <h1>Welcome!</h1>
     <h3>Please, select a playlist:</h3>
     <ul>
-        <li><a href={{route('classic')}}>Classic</a></li>
-        <li><a href="/rock">Rock</a></li>
-        <li><a href="/progr">Progressive</a></li>
-        <li><a href="/jazz">Jazz</a></li>
+        <li><a href="{{ route('classic') }}">Classic</a></li>
+        <li><a href="{{ route('rock') }}">Rock</a></li>
+        <li><a href="{{ route('progr') }}">Progressive</a></li>
+        <li><a href="{{ route('jazz') }}">Jazz</a></li>
     </ul>
 </body>
 

@@ -133,8 +133,7 @@ $classics= [];
 @endphp
 
 <body>
-    <button class="btn"><a href="/">Torna alla Homepage</a></button>
-    prova- Classic
+    <button class="btn"><a href="{{ route('home')}}">Torna alla Homepage</a></button>
 
     <ul class="card-wrapper">
         <li class="card">
