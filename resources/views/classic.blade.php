@@ -12,9 +12,9 @@
 
     <!-- Styles -->
     <style>
-        html,
+
         body {
-            background-color: rgba(68, 68, 68, 0.741);
+            background-color: rgb(36, 42, 40);
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
             height: 100vh;
@@ -129,28 +129,38 @@
 {{-- PHP DATA --}}
 
 @php 
-$classics= [];
+        $classics=[
+            [
+                'title' => 'Gymnopédies Gnossiennes',
+                'author' => 'Erik Satie',
+                'img' => 'https://i.scdn.co/image/ab67616d0000b2730d3bec7d7757e7bc95b682a8'
+            ],
+            [
+                'title' => 'Vivaldi The Four Seasons',
+                'author' => 'Max Richter',
+                'img' => 'https://storage.highresaudio.com/library/bild/c_70000/79172/field4.jpg'
+            ],
+            [
+                'title' => 'Clair De Lune',
+                'author' => 'Claude Debussy',
+                'img' => 'https://i.scdn.co/image/ab67616d0000b273ff9ff657e07a91c83988fbd6'
+            ]
+
+];
 @endphp
 
 <body>
     <button class="btn"><a href="{{ route('home')}}">Torna alla Homepage</a></button>
 
     <ul class="card-wrapper">
-        <li class="card">
-            <img src='https://i.scdn.co/image/ab67616d0000b2730d3bec7d7757e7bc95b682a8' alt=''>
-            <h3><a href="">A Super Wonderful Headline</a></h3>
-            <p>Lorem ipsum sit dolor amit</p>
-        </li>
-        <li class="card">
-            <img src='https://storage.highresaudio.com/library/bild/c_70000/79172/field4.jpg' alt=''>
-            <h3><a href="">A Super Wonderful Headline</a></h3>
-            <p>Lorem ipsum sit dolor amit</p>
-        </li>
-        <li class="card">
-            <img src='https://i.scdn.co/image/ab67616d0000b273ff9ff657e07a91c83988fbd6' alt=''>
-            <h3><a href="">A Super Wonderful Headline</a></h3>
-            <p>Lorem ipsum sit dolor amit</p>
-        </li>
+        @for ($i = 0; $i < count($classics); $i++)
+            <li class="card">
+            <img src="{{$classics[$i]['img']}}">
+            <h3>{{$classics[$i]['title']}}</h3>
+            <p>{{$classics[$i]['author']}}</p>
+            </li>
+
+        @endfor
     </ul>
 </body>
 
